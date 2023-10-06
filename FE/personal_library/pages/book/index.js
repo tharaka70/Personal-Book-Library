@@ -217,7 +217,7 @@ export default function Book() {
                 aria-describedby="modal-modal-description"
                 disableScrollLock={true}
               >
-                  <EditBook token = {token} closefunc = {handleClose} book = {bookData} bookId = {bookId} />
+                  <EditBook token = {token} closefunc = {handleClose} book = {bookData} bookId = {bookId} setBookData = {setBookData}/>
               </Dialog>
             </div>
         </div>

@@ -63,7 +63,9 @@ async def update_user(book_id: int, book_data: book_schema.BookBase, db: Session
                     "author": book_data.author,
                     "published_date": book_data.published_date,
                     "isbn": book_data.isbn,
-                    "cover_image": book_data.cover_image
+                    "cover_image": book_data.cover_image,
+                    "rating":book_data.rating
+                    
                 }
     updated_book = book_crud.update_book(db, book_data, book_id)
     return updated_book

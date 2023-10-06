@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 
 
-export default function EditBook({token , closefunc , book , bookId}) {
+export default function EditBook({token , closefunc , book , bookId , setBookData}) {
     
 
   const [userId, setUserId] = useState(false);
@@ -83,6 +83,8 @@ export default function EditBook({token , closefunc , book , bookId}) {
       cover_image: cover_image,
       rating: rating,
       }    
+
+    setBookData({...book,...bookData})
 
     console.log("my book",bookData);
         
