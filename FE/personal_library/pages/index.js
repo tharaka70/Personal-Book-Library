@@ -66,7 +66,7 @@ export default function SignIn() {
 
   const handleTokenFetch = async (username,password) => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/token', {
+      const response = await fetch('http://52.66.202.110:8000/token', {
         method: 'POST',
         headers: {
           'accept': 'application/json',

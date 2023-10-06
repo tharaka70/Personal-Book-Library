@@ -82,7 +82,7 @@ export default function AddBook({token , closefunc}) {
     console.log("my book",bookData);
         
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/v1/user/${userId}/books/`, {
+      const response = await fetch(`http://52.66.202.110:8000/api/v1/user/${userId}/books/`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`, // Include the token in the Authorization header

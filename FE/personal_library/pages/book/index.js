@@ -12,7 +12,7 @@ import { Dialog } from '@mui/material';
 const inter = Inter({ subsets: ['latin'] })
 
 
-//http://127.0.0.1:8000/api/v1/users/1
+//http://52.66.202.110:8000/api/v1/users/1
 
 
 
@@ -72,7 +72,7 @@ export default function Book() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/v1/users/${userId}`, {
+        const response = await fetch(`http://52.66.202.110:8000/api/v1/users/${userId}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
@@ -102,7 +102,7 @@ export default function Book() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/v1/book/${bookId}`, {
+        const response = await fetch(`http://52.66.202.110:8000/api/v1/book/${bookId}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
@@ -129,7 +129,7 @@ export default function Book() {
 
   const handleDelete = async ()=>{
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/v1/book/${bookId}`, {
+      const response = await fetch(`http://52.66.202.110:8000/api/v1/book/${bookId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`, // Include the token in the Authorization header

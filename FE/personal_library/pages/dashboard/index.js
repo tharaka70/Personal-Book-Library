@@ -9,7 +9,7 @@ import { Dialog } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] })
 
-//http://127.0.0.1:8000/api/v1/users/1
+//http://52.66.202.110:8000/api/v1/users/1
 
 
 
@@ -70,7 +70,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:8000/api/v1/users/${userId}`, {
+        const response = await fetch(`http://52.66.202.110:8000/api/v1/users/${userId}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`, // Include the token in the Authorization header

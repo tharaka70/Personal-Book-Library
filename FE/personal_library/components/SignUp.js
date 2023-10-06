@@ -95,7 +95,7 @@ export default function SignUp() {
         }    
         
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/v1/user', {
+      const response = await fetch('http://52.66.202.110:8000/api/v1/user', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
