@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from .book_schema import BookBase , Book , BookCreate
 
 class Token(BaseModel):
+    id : int
     access_token: str
     token_type: str
 

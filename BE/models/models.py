@@ -27,5 +27,6 @@ class Book(Base):
     isbn = Column(String, index=True,unique=True)
     cover_image = Column(String)
     owner_id = Column(Integer, ForeignKey("users.id"))
+    rating = Column(Integer)
 
     owner = relationship("User", back_populates="books")

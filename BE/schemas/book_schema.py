@@ -8,6 +8,7 @@ class BookBase(BaseModel):
     published_date : date
     isbn: str
     cover_image : str
+    rating : int
 
 
 class BookCreate(BookBase):

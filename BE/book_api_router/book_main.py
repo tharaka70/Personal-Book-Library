@@ -41,6 +41,13 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
 
+@router.get("/api/v1/book/{book_id}", response_model=book_schema.Book,tags=["GET BOOKS BY ID"])
+def get_book(book_id: int, db: Session = Depends(get_db)):
+    db_book = crud.get_book_by_id(db, book_id=book_id)
+    if db_book is None:
+        raise HTTPException(status_code=404, detail="Book not found")
+    return db_book
+
 
 @router.get("/api/v1/all_books/", response_model=list[book_schema.Book],tags=["VIEW ALL BOOKS"])
 def read_books(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):

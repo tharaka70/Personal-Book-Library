@@ -15,6 +15,7 @@ from pydantic import BaseModel
 from book_api_router import book_main as book
 from crud.user_crud import get_password_hash, verify_password, create_access_token , validate_username , create_new_user,update_user_crud
 from typing import List
+from fastapi.middleware.cors import CORSMiddleware
 
 # to get a string like this run:
 # openssl rand -hex 32
@@ -30,6 +31,19 @@ models.Base.metadata.create_all(bind=engine)
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+
+
 
 # Dependency
 def get_db():
@@ -106,7 +120,7 @@ async def login_for_access_token(
     access_token = create_access_token(
         data={"sub": user.username}, expires_delta=access_token_expires
     )
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {"id":user.id, "access_token": access_token, "token_type": "bearer"}
 
 
 #### Endpoint to create users  #######
